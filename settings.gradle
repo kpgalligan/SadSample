@@ -1,0 +1,22 @@
+
+pluginManagement {
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.id == "kotlin-multiplatform") {
+                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
+            }
+        }
+    }
+    repositories {
+        maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
+        google()
+        jcenter()
+        mavenCentral()
+    }
+}
+
+enableFeaturePreview('GRADLE_METADATA')
+
+rootProject.name = 'KMPPerformance'
+
+include ':app'
