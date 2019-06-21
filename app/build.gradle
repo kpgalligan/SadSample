@@ -39,25 +39,15 @@ dependencies {
 
 kotlin {
 //    android("android")
-    // This is for iPhone emulator
-    // Switch here to iosArm64 (or iosArm32) to build library for iPhone device
-//    macosX64("ios")
+
     iosX64("ios") {
         compilations.main {
             binaries {
                 framework("arst") {
                     freeCompilerArgs.add("-Xobjc-generics")
                 }
-
             }
-
-//            extraOpts "-Xobjc-generics"
         }
-        /*compilations.test {
-            binaries {
-                framework()
-            }
-        }*/
     }
     sourceSets {
         commonMain {
